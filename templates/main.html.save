@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+   <head>
+      <title>{{ title }}</title>
+   </head>
+
+   <body>
+      <h1></h1>
+      <h2>The date and time on the server is: {{ time }}</h2>
+	<iframe width="854" height="480" src="https://www.youtube.com/embed/6tR5aDGcXPg" frameborder="0" gesture="media" allowfullscreen>
+	</iframe>
+   </body>
+</html>

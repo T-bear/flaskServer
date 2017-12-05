@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type=text/javascript src="{{
+  url_for('static', filename='jquery-3.2.1.js') }}"></script>
+    <script>
+    $( document ).ready(function() {
+    console.log( "ready!" );
+});
+    function ajaxCall() {
+        $.ajax({
+            url: "http://http://155.4.72.82:8000/dataGet",
+            datatype: 'json',
+            cache: false,
+            success: function (data) {
+            var result = $('<div />').append(data).find('#showresults').html();
+            $('#showresults').html(result);
+        },
+        })
+
+    }
+    setInterval(ajaxCall, 5000);
+
+    </script>
+<title>Flask, PyMongo and Ajax</title>
+</head>
+<body>
+<div id="showresults">
+<ul>
+    {% for n in output %}
+    <li>{{n}}</li>
+    {% endfor %}
+</ul>
+</div>
+
+</body>
+</html>
